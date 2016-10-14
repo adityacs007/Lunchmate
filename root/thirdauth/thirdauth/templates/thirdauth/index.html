@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Lunchmate</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    
+  </head>
+  <body>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/css/beautiful.css" rel="stylesheet">
+
+	<div class="container">
+      
+      <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
+
+		<div class="container text-center">
+		    <form class="form-signin" data-ember-action="2">
+		    	<h2 class="form-signin-heading">Lunchmate</h2>
+
+			<small class="text-muted">Connect with your favorite social network</small>
+			<br><br>
+
+			
+			<p>
+			<a class="btn btn-primary social-login-btn social-facebook" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}"><i class="fa fa-facebook"></i></a>
+			<a class="btn btn-primary social-login-btn social-twitter" href="{% url 'social:begin' 'twitter' %}?next={{ request.path }}"><i class="fa fa-twitter"></i></a>
+			</p>
+			<p>
+			<a class="btn btn-primary social-login-btn social-linkedin" href="{% url 'social:begin' 'linkedin-oauth2' %}?next={{ request.path }}"><i class="fa fa-linkedin"></i></a>
+			<a class="btn btn-primary social-login-btn social-google" href="{% url 'adi' %}?next={{ request.path }}"><i class="fa fa-google-plus"></i></a>
+			</p>
+			
+			<br>
+
+		    <small class="text-muted">Or sign in with Lunchmate</small>
+		    <br><br>
+	    	
+	        <input id="ember360" class="ember-view ember-text-field form-control login-input" placeholder="Email Address" type="text">
+	        <input id="ember361" class="ember-view ember-text-field form-control login-input-pass" placeholder="Password" type="password">
+
+	        <script id="metamorph-22-start" type="text/x-placeholder"></script><script id="metamorph-22-end" type="text/x-placeholder"></script>
+
+	        <button class="btn btn-lg btn-primary btn-block btn-center" type="submit" data-bindattr-3="3">Sign in</button>
+	        <br>
+	        <small class="create-account text-muted">Dont have an account? <button id="ember363" class="ember-view btn btn-sm btn-default"> Register </button> </small>
+	    </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+</html>

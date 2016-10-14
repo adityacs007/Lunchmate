@@ -1,0 +1,14 @@
+PRAGMA table_info(table_name);
+
+
+{% comment %}
+{% if not user.is_anonymous %}
+
+{% load friendshiptags %}
+{% friends request.user %}
+{% followers request.user %}
+{% following request.user %}
+{% friend_requests request.user %}
+
+{% endif %}
+{% endcomment %}

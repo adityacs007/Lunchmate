@@ -1,0 +1,57 @@
+{% extends "site_base.html" %}
+
+{% load account_tags %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block head_title %}{% trans "Log in" %}{% endblock %}
+{% block topbar_base %}{% endblock %}
+
+{% block body %}
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
+	<link href="/site_media/static/css/beautiful.css" rel="stylesheet">
+	<div class="container">
+		<div class="container text-center">		
+          <form class="form-signin" method="POST" action="{% url "account_login" %}" autocapitalize="off" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+              <legend><h4>{% trans "Log in using" %}</h4></legend>
+				<p>
+				<a class="btn btn-primary social-login-btn social-facebook" href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-facebook"></i></a>
+				<a class="btn btn-primary social-login-btn social-twitter" href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-twitter"></i></a>
+				</p>
+				<p>
+				<a class="btn btn-primary social-login-btn social-linkedin" href="{% url 'social:begin' 'linkedin-oauth2' %}"><i class="fa fa-linkedin"></i></a>
+				<a class="btn btn-primary social-login-btn social-google" href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa fa-google-plus"></i></a>
+				</p>
+				<h4>OR</h4>
+              {% csrf_token %}
+              {{ form|bootstrap }}
+              {% if redirect_field_value %}
+                  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+              {% endif %}
+              <button type="submit" class="btn btn-primary">{% trans "Log in" %}</button>
+              <a href="{% url "account_password_reset" %}" class="btn btn-link">{% trans "Forgot your password?" %}</a>
+          </form>
+          
+          {% if ACCOUNT_OPEN_SIGNUP %}
+              <p class="login-signup">
+                  <small>
+                      {% trans "Don't have an account?" %}  <strong><a href="{% urlnext 'account_signup' %}">{% trans "Sign up" %}</a></strong>
+                  </small>
+              </p>
+          {% endif %}
+      
+	      <div class="col-md-4">
+	          {% include "account/_login_sidebar.html" %}
+	      </div>
+	    </div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#id_username').focus();
+        });
+    </script>
+{% endblock %}

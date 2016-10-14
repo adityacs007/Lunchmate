@@ -1,0 +1,28 @@
+[14/Feb/2016 04:29:31] "GET /blog/ HTTP/1.1" 200 1181
+[14/Feb/2016 04:29:34] "GET /blog/post/1/ HTTP/1.1" 200 1032
+[14/Feb/2016 06:57:06] "GET /blog/post/1/ HTTP/1.1" 200 1032
+[14/Feb/2016 06:57:06] "GET /static/css/blog.css HTTP/1.1" 200 719
+Not Found: /blog
+[14/Feb/2016 06:57:25] "GET /blog HTTP/1.1" 301 0
+[14/Feb/2016 06:57:25] "GET /blog/ HTTP/1.1" 200 1181
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 14, 2016 - 04:29:16
+Django version 1.9.1, using settings 'mysite.settings'
+Starting development server at http://0.0.0.0:8000/
+Quit the server with CONTROL-C.
+Not Found: /blog
+[14/Feb/2016 20:23:56] "GET /blog HTTP/1.1" 301 0
+[14/Feb/2016 20:23:56] "GET /blog/ HTTP/1.1" 200 1181
+[14/Feb/2016 20:23:57] "GET /static/css/blog.css HTTP/1.1" 200 719
+Not Found: /favicon.ico
+[14/Feb/2016 20:23:57] "GET /favicon.ico HTTP/1.1" 404 2153
+[14/Feb/2016 20:24:19] "GET /blog/post/1/ HTTP/1.1" 200 1032
+[14/Feb/2016 20:24:28] "GET /blog/post/1/ HTTP/1.1" 200 1032
+[15/Feb/2016 00:54:38] "GET /blog/ HTTP/1.1" 200 1181
+[15/Feb/2016 00:54:41] "GET /blog/ HTTP/1.1" 200 1181
+Not Found: /
+[15/Feb/2016 02:09:31] "GET / HTTP/1.1" 404 2120
+Not Found: /http:/testp5.mielno.lubin.pl/testproxy.php
+[15/Feb/2016 06:22:54] "GET http://testp5.mielno.lubin.pl/testproxy.php HTTP/1.1" 404 1735
